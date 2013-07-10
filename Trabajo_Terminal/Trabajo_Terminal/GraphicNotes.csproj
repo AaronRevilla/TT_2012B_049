@@ -77,15 +77,15 @@
     <Compile Include="Adorners\ResizeDecorator.cs" />
     <Compile Include="Adorners\ResizeThumb.cs" />
     <Compile Include="Adorners\RubberbandAdorner.cs" />
-    <Compile Include="DocumentContainer.cs" />
-    <Compile Include="Enums.cs" />
-    <Compile Include="Objects\Views\BaseObject.cs" />
-    <Compile Include="Objects\Views\ObjectBar.cs" />
-    <Compile Include="Objects\Views\TextObject.cs" />
-    <Compile Include="Workspace\Toolbox.cs" />
-    <Compile Include="Workspace\ToolboxItem.cs" />
-    <Compile Include="Workspace\ToolboxObject.cs" />
-    <Compile Include="Workspace\CanvasWorkspace.cs" />
+    <Compile Include="Core\DocumentContainer.cs" />
+    <Compile Include="Core\Enums.cs" />
+    <Compile Include="Views\Objects\BaseObject.cs" />
+    <Compile Include="Views\Objects\ObjectBar.cs" />
+    <Compile Include="Views\Objects\TextObject.cs" />
+    <Compile Include="Views\Toolbox\Toolbox.cs" />
+    <Compile Include="Views\Toolbox\ToolboxItem.cs" />
+    <Compile Include="Views\Toolbox\ToolboxObject.cs" />
+    <Compile Include="Views\Workspace\CanvasWorkspace.cs" />
     <Page Include="Collections\ToolboxCollection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -161,7 +161,12 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Objects\Models\" />
+    <Folder Include="ConcurrenceControl\" />
+    <Folder Include="Models\" />
+    <Folder Include="P2P\" />
+    <Folder Include="Persistence\" />
+    <Folder Include="Resources\Styles\" />
+    <Folder Include="Resources\Templates\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\lock_object.png" />
