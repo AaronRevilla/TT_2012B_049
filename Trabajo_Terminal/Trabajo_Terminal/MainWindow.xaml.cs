@@ -11,10 +11,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GraphicNotes.Objects.Views;
-using GraphicNotes.Workspace;
+using GraphicNotes.Views.Objects;
+using GraphicNotes.Views.Workspace;
 using System.Threading;
 using DevExpress.Xpf.Docking;
+using GraphicNotes.Core;
 
 namespace GraphicNotes
 {

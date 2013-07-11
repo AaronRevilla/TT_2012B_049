@@ -5,11 +5,11 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Input;
-using GraphicNotes.Workspace;
+using GraphicNotes.Views.Workspace;
 using System.Windows.Media;
-using GraphicNotes.Adorners;
+using GraphicNotes.Views.Adorners;
 
-namespace GraphicNotes.Objects.Views
+namespace GraphicNotes.Views.Objects
 {
     class BaseObject: ContentControl
     {

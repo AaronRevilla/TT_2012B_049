@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows;
-using GraphicNotes.Objects.Views;
 using System.Windows.Input;
 using System.Windows.Documents;
-using GraphicNotes.Adorners;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using GraphicNotes.Views.Objects;
+using GraphicNotes.Views.Adorners;
 
-namespace GraphicNotes.Workspace
+namespace GraphicNotes.Views.Workspace
 {
     class CanvasWorkspace:Canvas
     {

@@ -6,7 +6,7 @@ using DevExpress.Xpf.Docking;
 using System.Windows;
 
 
-namespace GraphicNotes
+namespace GraphicNotes.Core
 {
     class DocumentContainer
     {

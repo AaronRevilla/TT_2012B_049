@@ -7,8 +7,9 @@ using System.Windows.Input;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using GraphicNotes.Core;
 
-namespace GraphicNotes.Workspace
+namespace GraphicNotes.Views.Toolbox
 {
     class ToolboxObject:ContentControl
     {

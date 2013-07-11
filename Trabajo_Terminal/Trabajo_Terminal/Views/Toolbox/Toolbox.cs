@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows;
 
-namespace GraphicNotes.Workspace
+namespace GraphicNotes.Views.Toolbox
 {
     public class Toolbox : ItemsControl
     {

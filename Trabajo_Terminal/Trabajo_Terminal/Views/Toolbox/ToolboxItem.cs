@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Controls;
 
-namespace GraphicNotes.Workspace
+namespace GraphicNotes.Views.Toolbox
 {
     class ToolboxItem:ContentControl
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace GraphicNotes.Objects.Views
+namespace GraphicNotes.Views.Objects
 {
     class TextObject:BaseObject
     {

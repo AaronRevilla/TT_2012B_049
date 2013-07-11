@@ -5,11 +5,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/BaseObject.xaml"/>
-                <ResourceDictionary Source="Resources/TextObject.xaml"/>
-                <ResourceDictionary Source="Resources/Toolbox.xaml"/>
-                <ResourceDictionary Source="Resources/DocumentPanel.xaml"/>
-                <ResourceDictionary Source="Collections/ToolboxCollection.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/BaseObject.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/TextObject.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/Toolbox.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/DocumentPanel.xaml"/>
+                <ResourceDictionary Source="Resources/Collections/ToolboxCollection.xaml"/>
                 <ResourceDictionary Source="Languages/StringResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
