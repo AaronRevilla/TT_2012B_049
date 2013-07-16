@@ -80,10 +80,7 @@ namespace GraphicNotes.Views.Workspace
             int? type = (int)(e.Data.GetData("ObjectType"));
             if (type!=null)
             {
-                Grid grid = new Grid() { Background = Brushes.Azure, Width=65, Height=65 };
                 TextObject ob = new TextObject() { Width = 65, Height = 65 };
-                ob.Content = grid;
-                Console.WriteLine("Elemento Primario:" +LogicalTreeHelper.GetChildren(ob));
                 Point position = e.GetPosition(this);
                 CanvasWorkspace.SetLeft(ob, Math.Max(0, position.X - ob.Width / 2));
                 CanvasWorkspace.SetTop(ob, Math.Max(0, position.Y - ob.Height / 2));

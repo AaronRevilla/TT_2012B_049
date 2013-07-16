@@ -8,6 +8,9 @@ namespace GraphicNotes.Views.Objects
 {
     class TextObject:BaseObject
     {
-
+        static TextObject()
+        {
+            FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(TextObject), new FrameworkPropertyMetadata(typeof(TextObject)));
+        }
     }
 }
