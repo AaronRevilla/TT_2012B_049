@@ -4,88 +4,53 @@
         Title="Window1" Height="300" Width="300">
     <Grid>
         <Grid>
-            <Grid.Resources>
-                <Style TargetType="{x:Type TextBox}">
-                    <Setter Property="BorderThickness" Value="1"/>
-                    <Setter Property="BorderBrush" Value="Black"/>
-                    <Setter Property="VerticalContentAlignment" Value="Center"/>
-                </Style>
-            </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Grid.Column="0" Text="Cell"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="0" Text="Cell"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="0" Text="Cell"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="0" Text="Cell"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="0" Text="Cell"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="0" Text="Cell"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="0" Text="Cell"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="0" Text="Cell"></TextBox>
 
-            <TextBox Grid.Row="0" Grid.Column="1" Text="Cell"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="Cell"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="1" Text="Cell"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="Cell"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="Cell"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="1" Text="Cell"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="1" Text="Cell"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="1" Text="Cell"></TextBox>
+            <GridSplitter HorizontalAlignment="Right" 
+                  VerticalAlignment="Stretch" 
+                  Grid.Column="1" Grid.RowSpan="5" ResizeBehavior="PreviousAndNext"
+                  Width="2" Background="Black"/>
+            <GridSplitter HorizontalAlignment="Right"
+                  VerticalAlignment="Stretch" 
+                  Grid.Column="3" Grid.RowSpan="5" ResizeBehavior="PreviousAndNext"
+                  Width="2" Background="Black"/>
 
-            <TextBox Grid.Row="0" Grid.Column="2" Text="Cell"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="2" Text="Cell"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" Text="Cell"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="2" Text="Cell"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="2" Text="Cell"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="2" Text="Cell"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="2" Text="Cell"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="2" Text="Cell"></TextBox>
+            
+            <GridSplitter HorizontalAlignment="Stretch"
+                  VerticalAlignment="Top"
+                  Grid.Row="1" Grid.ColumnSpan="5" ResizeBehavior="PreviousAndNext"
+                  Height="2" Background="Black"/>
 
-            <TextBox Grid.Row="0" Grid.Column="3" Text="Cell"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="3" Text="Cell"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="3" Text="Cell"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="3" Text="Cell"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="3" Text="Cell"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="3" Text="Cell"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="3" Text="Cell"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="3" Text="Cell"></TextBox>
+            <GridSplitter HorizontalAlignment="Stretch"
+                  VerticalAlignment="Top"
+                  Grid.Row="3" Grid.ColumnSpan="5" ResizeBehavior="PreviousAndNext"
+                  Height="2" Background="Black"/>
 
-            <TextBox Grid.Row="0" Grid.Column="4" Text="Cell"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="4" Text="Cell"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="4" Text="Cell"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="4" Text="Cell"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="4" Text="Cell"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="4" Text="Cell"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="4" Text="Cell"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="4" Text="Cell"></TextBox>
+            <TextBox Text="Cell" Grid.Column="0" Grid.Row="0"></TextBox>
+            <TextBox Text="Cell" Grid.Column="0" Grid.Row="2"></TextBox>
+            <TextBox Text="Cell" Grid.Column="0" Grid.Row="4"></TextBox>
 
-            <TextBox Grid.Row="0" Grid.Column="5" Text="Cell"></TextBox>
-            <TextBox Grid.Row="1" Grid.Column="5" Text="Cell"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="5" Text="Cell"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="5" Text="Cell"></TextBox>
-            <TextBox Grid.Row="4" Grid.Column="5" Text="Cell"></TextBox>
-            <TextBox Grid.Row="5" Grid.Column="5" Text="Cell"></TextBox>
-            <TextBox Grid.Row="6" Grid.Column="5" Text="Cell"></TextBox>
-            <TextBox Grid.Row="7" Grid.Column="5" Text="Cell"></TextBox>
+            <TextBox Text="Cell" Grid.Column="2" Grid.Row="0"></TextBox>
+            <TextBox Text="Cell" Grid.Column="2" Grid.Row="2"></TextBox>
+            <TextBox Text="Cell" Grid.Column="2" Grid.Row="4"></TextBox>
 
+            <TextBox Text="Cell" Grid.Column="4" Grid.Row="0"></TextBox>
+            <TextBox Text="Cell" Grid.Column="4" Grid.Row="2"></TextBox>
+            <TextBox Text="Cell" Grid.Column="4" Grid.Row="4"></TextBox>
         </Grid>
-        
-        
     </Grid>
 </Window>
    
