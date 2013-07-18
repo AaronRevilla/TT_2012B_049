@@ -14,7 +14,7 @@
     <Style TargetType="{x:Type v:TextObject}" BasedOn="{StaticResource BaseObjectStyle}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type v:BaseObject}">
+                <ControlTemplate TargetType="{x:Type v:TextObject}">
                     <Grid DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=.}">
                         <a:MoveThumb x:Name="PART_MoveThumb"
                                      Cursor="SizeAll"
@@ -32,9 +32,9 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <dxe:TextEdit Grid.Row="0" Style="{StaticResource TextObject_TextEditStyle}" FontWeight="Bold" NullText="Titulo" />
+                                <dxe:TextEdit x:Name="PART_Title" Grid.Row="0" Style="{StaticResource TextObject_TextEditStyle}" FontWeight="Bold" NullText="Titulo" />
                                 <Separator Grid.Row="1" Background="DarkGray"></Separator>
-                                <dxe:TextEdit Grid.Row="2" Style="{StaticResource TextObject_TextEditStyle}" 
+                                <dxe:TextEdit x:Name="PART_Content" Grid.Row="2" Style="{StaticResource TextObject_TextEditStyle}" 
                                               ScrollViewer.VerticalScrollBarVisibility="Auto"  VerticalContentAlignment="Top" />
                               
                             </Grid>

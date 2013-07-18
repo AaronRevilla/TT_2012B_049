@@ -1,6 +1,7 @@
 ﻿<Window xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="GraphicNotes.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:o="clr-namespace:GraphicNotes.Views.Objects"
         Title="Window1" Height="300" Width="300">
     <Grid>
         <Grid>
@@ -22,34 +23,36 @@
             <GridSplitter HorizontalAlignment="Right" 
                   VerticalAlignment="Stretch" 
                   Grid.Column="1" Grid.RowSpan="5" ResizeBehavior="PreviousAndNext"
-                  Width="2" Background="Black"/>
+                  Width="1" Background="Black"/>
             <GridSplitter HorizontalAlignment="Right"
                   VerticalAlignment="Stretch" 
                   Grid.Column="3" Grid.RowSpan="5" ResizeBehavior="PreviousAndNext"
-                  Width="2" Background="Black"/>
+                  Width="1" Background="Black"/>
 
             
             <GridSplitter HorizontalAlignment="Stretch"
                   VerticalAlignment="Top"
                   Grid.Row="1" Grid.ColumnSpan="5" ResizeBehavior="PreviousAndNext"
-                  Height="2" Background="Black"/>
+                  Height="1" Background="Black"/>
 
             <GridSplitter HorizontalAlignment="Stretch"
                   VerticalAlignment="Top"
                   Grid.Row="3" Grid.ColumnSpan="5" ResizeBehavior="PreviousAndNext"
-                  Height="2" Background="Black"/>
+                  Height="1" Background="Black"/>
 
-            <TextBox Text="Cell" Grid.Column="0" Grid.Row="0"></TextBox>
-            <TextBox Text="Cell" Grid.Column="0" Grid.Row="2"></TextBox>
-            <TextBox Text="Cell" Grid.Column="0" Grid.Row="4"></TextBox>
+            <o:TableCell Text="Cell" Grid.Column="0" Grid.Row="0" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
+            <o:TableCell Text="Cell" Grid.Column="0" Grid.Row="2" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
+            <o:TableCell Text="Cell" Grid.Column="0" Grid.Row="4" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
 
-            <TextBox Text="Cell" Grid.Column="2" Grid.Row="0"></TextBox>
-            <TextBox Text="Cell" Grid.Column="2" Grid.Row="2"></TextBox>
-            <TextBox Text="Cell" Grid.Column="2" Grid.Row="4"></TextBox>
+            <o:TableCell Text="Cell" Grid.Column="2" Grid.Row="0" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
+            <o:TableCell Text="Cell" Grid.Column="2" Grid.Row="2" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
+            <o:TableCell Text="Cell" Grid.Column="2" Grid.Row="4" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
 
-            <TextBox Text="Cell" Grid.Column="4" Grid.Row="0"></TextBox>
-            <TextBox Text="Cell" Grid.Column="4" Grid.Row="2"></TextBox>
-            <TextBox Text="Cell" Grid.Column="4" Grid.Row="4"></TextBox>
+            <o:TableCell Text="Cell" Grid.Column="4" Grid.Row="0" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
+            <o:TableCell Text="Cell" Grid.Column="4" Grid.Row="2" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
+            <o:TableCell Text="Cell" Grid.Column="4" Grid.Row="4" Style="{StaticResource TableObject_TextEditStyle}"></o:TableCell>
+
+
         </Grid>
     </Grid>
 </Window>

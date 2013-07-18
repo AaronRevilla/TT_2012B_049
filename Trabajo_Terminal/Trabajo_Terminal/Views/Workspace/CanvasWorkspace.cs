@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using GraphicNotes.Views.Objects;
 using GraphicNotes.Views.Adorners;
+using GraphicNotes.Core;
 
 namespace GraphicNotes.Views.Workspace
 {
@@ -80,13 +81,29 @@ namespace GraphicNotes.Views.Workspace
             int? type = (int)(e.Data.GetData("ObjectType"));
             if (type!=null)
             {
-                TextObject ob = new TextObject() { Width = 65, Height = 65 };
-                Point position = e.GetPosition(this);
-                CanvasWorkspace.SetLeft(ob, Math.Max(0, position.X - ob.Width / 2));
-                CanvasWorkspace.SetTop(ob, Math.Max(0, position.Y - ob.Height / 2));
-                this.Children.Add(ob);
-                this.DeselectAll();
-                ob.IsSelected = true;
+                if (type ==(int)Enums.Objects.Text)
+                {
+                    TextObject ob = new TextObject() { Width = 65, Height = 65 };
+                    Point position = e.GetPosition(this);
+                    CanvasWorkspace.SetLeft(ob, Math.Max(0, position.X - ob.Width / 2));
+                    CanvasWorkspace.SetTop(ob, Math.Max(0, position.Y - ob.Height / 2));
+                    this.Children.Add(ob);
+                    this.DeselectAll();
+                    ob.IsSelected = true;
+                }
+                else if (type == (int)Enums.Objects.Table)
+                {
+                    TableObject ob = new TableObject() { Width = 65, Height = 65 };
+                    TableForm tf = new TableForm();
+                    
+                    tf.ShowDialog();
+                    Point position = e.GetPosition(this);
+                    CanvasWorkspace.SetLeft(ob, Math.Max(0, position.X - ob.Width / 2));
+                    CanvasWorkspace.SetTop(ob, Math.Max(0, position.Y - ob.Height / 2));
+                    this.Children.Add(ob);
+                    this.DeselectAll();
+                    ob.IsSelected = true;
+                }
                 
             }
 

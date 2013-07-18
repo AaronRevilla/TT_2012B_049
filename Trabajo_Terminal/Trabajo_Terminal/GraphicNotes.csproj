@@ -54,6 +54,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.Data.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -62,13 +63,17 @@
     <Reference Include="DevExpress.Xpf.Layout.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpf.Ribbon.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,6 +104,11 @@
     <Compile Include="Core\Enums.cs" />
     <Compile Include="Views\Objects\BaseObject.cs" />
     <Compile Include="Views\Objects\ObjectBar.cs" />
+    <Compile Include="Views\Objects\TableCell.cs" />
+    <Compile Include="Views\Objects\TableForm.xaml.cs">
+      <DependentUpon>TableForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Objects\TableObject.cs" />
     <Compile Include="Views\Objects\TextObject.cs" />
     <Compile Include="Views\Toolbox\Toolbox.cs" />
     <Compile Include="Views\Toolbox\ToolboxItem.cs" />
@@ -139,6 +149,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Styles\MetroButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Styles\ObjectBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Styles\Toolbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Objects\TableForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,34 +215,31 @@
     <Folder Include="Resources\Templates\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\lock_object.png" />
-    <Resource Include="Icons\delete_object.png" />
-    <Resource Include="Icons\edit_object.png" />
+    <Resource Include="Images\Icons\lock_object.png" />
+    <Resource Include="Images\Icons\delete_object.png" />
+    <Resource Include="Images\Icons\edit_object.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\video.png" />
+    <Resource Include="Images\ObjectIcons\video.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\table.png" />
+    <Resource Include="Images\ObjectIcons\table.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\picture.png" />
+    <Resource Include="Images\ObjectIcons\picture.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\text1.png" />
+    <Resource Include="Images\ObjectIcons\plot.png" />
+    <Resource Include="Images\ObjectIcons\line.png" />
+    <Resource Include="Images\ObjectIcons\figure.png" />
+    <Resource Include="Images\ObjectIcons\polygon.png" />
+    <Resource Include="Images\ObjectIcons\text.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\plot.png" />
-    <Resource Include="Images\line.png" />
-    <Resource Include="Images\figure.png" />
-    <Resource Include="Images\polygon.png" />
-    <Resource Include="Images\text.png" />
+    <Resource Include="Images\Icons\new_file_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\new_file_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\new_file_16x16.png" />
+    <Resource Include="Images\Icons\new_file_16x16.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
@@ -247,6 +262,30 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ThemeIcons\DeepBlue_16x16.png" />
+    <Resource Include="Images\ThemeIcons\DeepBlue_48x48.png" />
+    <Resource Include="Images\ThemeIcons\DXStyle.png" />
+    <Resource Include="Images\ThemeIcons\LightGray_16x16.png" />
+    <Resource Include="Images\ThemeIcons\LightGray_48x48.png" />
+    <Resource Include="Images\ThemeIcons\MetropolisDark.png" />
+    <Resource Include="Images\ThemeIcons\MetropolisLight.png" />
+    <Resource Include="Images\ThemeIcons\Office2007Black_16x16.png" />
+    <Resource Include="Images\ThemeIcons\Office2007Black_48x48.png" />
+    <Resource Include="Images\ThemeIcons\Office2007Blue_16x16.png" />
+    <Resource Include="Images\ThemeIcons\Office2007Blue_48x48.png" />
+    <Resource Include="Images\ThemeIcons\Office2007Silver_16x16.png" />
+    <Resource Include="Images\ThemeIcons\Office2007Silver_48x48.png" />
+    <Resource Include="Images\ThemeIcons\Office2010Black_48x48.png" />
+    <Resource Include="Images\ThemeIcons\Office2010Blue_48x48.png" />
+    <Resource Include="Images\ThemeIcons\Office2010Silver_48x48.png" />
+    <Resource Include="Images\ThemeIcons\Office2013_48x48.png" />
+    <Resource Include="Images\ThemeIcons\Seven_48x48.png" />
+    <Resource Include="Images\ThemeIcons\VS2010.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ribbon-application-32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
