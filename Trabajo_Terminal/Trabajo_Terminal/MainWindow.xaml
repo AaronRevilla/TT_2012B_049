@@ -22,7 +22,9 @@
                 <!--region #RibbonGalleryBarItem-->
                 <dxr:RibbonGalleryBarItem Name="gTheme" DropDownGalleryInit="OnThemeDropDownGalleryInit">
                     <dxr:RibbonGalleryBarItem.Gallery>
-                        <dxb:Gallery MinColCount="2" ColCount="4" RowCount="2" ItemCheckMode="Single" AllowHoverAnimation="True" AllowHoverImages="True" FilterCaption="Themes" IsItemCaptionVisible="False" ItemCaptionHorizontalAlignment="Center" HoverGlyphSize="96,96" ItemClick="OnThemeItemClick">
+                        <dxb:Gallery MinColCount="2" ColCount="4" RowCount="2" ItemCheckMode="Single" AllowHoverAnimation="True" AllowHoverImages="True" 
+                                     FilterCaption="Themes" IsItemCaptionVisible="True" ItemCaptionHorizontalAlignment="Center" ItemGlyphLocation="Top"
+                                     HoverGlyphSize="96,96" ItemClick="OnThemeItemClick">
                             <dxb:Gallery.Groups>
                                 <dxb:GalleryItemGroup Caption="Standard">
                                     <dxb:GalleryItem Caption="DXStyle" Glyph="/GraphicNotes;component/Images/ThemeIcons/DXStyle.png"/>
@@ -30,7 +32,7 @@
                                     <dxb:GalleryItem Caption="MetropolisDark" Glyph="/GraphicNotes;component/Images/ThemeIcons/MetropolisDark.png"/>
                                     <dxb:GalleryItem Caption="MetropolisLight" Glyph="/GraphicNotes;component/Images/ThemeIcons/MetropolisLight.png"/>
                                     <dxb:GalleryItem Caption="Seven" Glyph="/GraphicNotes;component/Images/ThemeIcons/Seven_48x48.png"/>
-                                    <dxb:GalleryItem Caption="Light Gray" Glyph="/GraphicNotes;component/Images/ThemeIcons/LightGray_16x16.png" />
+                                    <dxb:GalleryItem Caption="Light Gray" Glyph="/GraphicNotes;component/Images/ThemeIcons/LightGray_48x48.png" />
                                     <dxb:GalleryItem Caption="Deep Blue" Glyph="/GraphicNotes;component/Images/ThemeIcons/DeepBlue_48x48.png"/>
                                 </dxb:GalleryItemGroup>
                                 <dxb:GalleryItemGroup Caption="Office2007">
