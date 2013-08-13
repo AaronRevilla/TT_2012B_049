@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F1BEACF2-F499-4CE3-8BEE-1E005B3E6C20}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GraphicNotes</RootNamespace>
     <AssemblyName>GraphicNotes</AssemblyName>
@@ -61,8 +61,15 @@
     <Reference Include="DevExpress.Xpf.Core.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpf.Docking.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpf.Layout.v12.2.Core, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="devexpress.xpf.layoutcontrol.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Ribbon.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="OxyPlot">
+      <HintPath>..\..\..\..\..\Desktop\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf">
+      <HintPath>..\..\..\..\..\Desktop\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
@@ -94,21 +101,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ApplicationThemeProvider.cs" />
+    <Compile Include="BarItemsColorConverter.cs" />
+    <Compile Include="Core\RibbonBarCommands\NewDocumentCommand.cs" />
+    <Compile Include="MainWindow.Languages.cs" />
+    <Compile Include="MainWindow.Themes.cs" />
     <Compile Include="Views\Adorners\MoveThumb.cs" />
     <Compile Include="Views\Adorners\ResizeAdorner.cs" />
     <Compile Include="Views\Adorners\ResizeChrome.cs" />
     <Compile Include="Views\Adorners\ResizeDecorator.cs" />
     <Compile Include="Views\Adorners\ResizeThumb.cs" />
     <Compile Include="Views\Adorners\RubberbandAdorner.cs" />
-    <Compile Include="Core\DocumentContainer.cs" />
+    <Compile Include="Core\Document.cs" />
     <Compile Include="Core\Enums.cs" />
     <Compile Include="Views\Objects\BaseObject.cs" />
-    <Compile Include="Views\Objects\ObjectBar.cs" />
-    <Compile Include="Views\Objects\TableCell.cs" />
-    <Compile Include="Views\Objects\TableForm.xaml.cs">
+    <Compile Include="Views\Objects\PictureObject.cs" />
+    <Compile Include="Views\Objects\PlotObject.cs" />
+    <Compile Include="Views\Objects\TableObject\CellBorder.cs" />
+    <Compile Include="Views\Objects\TableObject\TableForm.xaml.cs">
       <DependentUpon>TableForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Objects\TableObject.cs" />
+    <Compile Include="Views\Objects\ObjectBar.cs" />
+    <Compile Include="Views\Objects\TableObject\TableCell.cs" />
+    <Compile Include="Views\Objects\TableObject\TableObject.cs" />
     <Compile Include="Views\Objects\TextObject.cs" />
     <Compile Include="Views\Toolbox\Toolbox.cs" />
     <Compile Include="Views\Toolbox\ToolboxItem.cs" />
@@ -117,6 +132,10 @@
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resources\Collections\RibbonBar\RibbonBarIcons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Collections\ToolboxCollection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +176,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Styles\PictureObject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\PlotObject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Styles\ResizeChrome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,7 +200,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Objects\TableForm.xaml">
+    <Page Include="Views\Objects\TableObject\TableForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -286,6 +313,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ribbon-application-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BarIcons\new_file_16x16.png" />
+    <Resource Include="Images\BarIcons\new_file_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BarIcons\open_16x16.png" />
+    <Resource Include="Images\BarIcons\open_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BarIcons\connect_16x16.png" />
+    <Resource Include="Images\BarIcons\connect_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

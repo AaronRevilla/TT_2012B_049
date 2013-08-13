@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using GraphicNotes.Views.Objects;
 using GraphicNotes.Views.Adorners;
 using GraphicNotes.Core;
+using DevExpress.Xpf.Docking;
 
 namespace GraphicNotes.Views.Workspace
 {
@@ -93,10 +94,34 @@ namespace GraphicNotes.Views.Workspace
                 }
                 else if (type == (int)Enums.Objects.Table)
                 {
-                    TableObject ob = new TableObject() { Width = 65, Height = 65 };
-                    TableForm tf = new TableForm();
                     
+                    
+                    TableForm tf = new TableForm();
                     tf.ShowDialog();
+                    if (tf.DialogResult == true)
+                    {
+                        TableObject ob = new TableObject(tf.Columns, tf.Rows) { Width = 65, Height = 65 };
+                        Point position = e.GetPosition(this);
+                        CanvasWorkspace.SetLeft(ob, Math.Max(0, position.X - ob.Width / 2));
+                        CanvasWorkspace.SetTop(ob, Math.Max(0, position.Y - ob.Height / 2));
+                        this.Children.Add(ob);
+                        this.DeselectAll();
+                        ob.IsSelected = true;
+                    }
+                }
+                else if (type == (int)Enums.Objects.Plot)
+                {
+                    PlotObject ob = new PlotObject() { Width = 200, Height = 200 };
+                    Point position = e.GetPosition(this);
+                    CanvasWorkspace.SetLeft(ob, Math.Max(0, position.X - ob.Width / 2));
+                    CanvasWorkspace.SetTop(ob, Math.Max(0, position.Y - ob.Height / 2));
+                    this.Children.Add(ob);
+                    this.DeselectAll();
+                    ob.IsSelected = true;
+                }
+                else if (type == (int)Enums.Objects.Picture)
+                {
+                    PictureObject ob = new PictureObject() { Width = 200, Height = 200 };
                     Point position = e.GetPosition(this);
                     CanvasWorkspace.SetLeft(ob, Math.Max(0, position.X - ob.Width / 2));
                     CanvasWorkspace.SetTop(ob, Math.Max(0, position.Y - ob.Height / 2));

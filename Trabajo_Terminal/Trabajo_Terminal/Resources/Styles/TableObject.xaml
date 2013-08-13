@@ -5,13 +5,60 @@
                     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
                     >
 
-    <Style TargetType="{x:Type v:TableCell}" x:Key="TableObject_TextEditStyle">
+    <Style TargetType="{x:Type v:CellBorder}" x:Key="CellBorder_Vertical">
+        <Setter Property="Fill" Value="Black"/>
+        <Setter Property="IsHitTestVisible" Value="false"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="Width" Value="{Binding Path=Size, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Size" Value="1"/>
+        <Setter Property="Visibility" Value="Visible"/>
+        <Setter Property="Grid.RowSpan" Value="3"/>
+    </Style>
+
+    <Style TargetType="{x:Type v:CellBorder}" x:Key="CellBorder_Horizontal">
+        <Setter Property="Fill" Value="Black"/>
+        <Setter Property="IsHitTestVisible" Value="false"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Height" Value="{Binding Path=Size, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Size" Value="1"/>
+        <Setter Property="Visibility" Value="Visible"/>
+        <Setter Property="Grid.ColumnSpan" Value="3"/>
+    </Style>
+
+
+    <Style TargetType="{x:Type GridSplitter}" x:Key="GridSplitter_Column">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="ResizeBehavior" Value="PreviousAndNext"/>
+        <Setter Property="Width" Value="1"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Grid.RowSpan" Value="{Binding Path=RowDefinitions.Count, RelativeSource={RelativeSource FindAncestor, 
+                         AncestorType={x:Type Grid}}}"/>
+    </Style>
+
+    <Style TargetType="{x:Type GridSplitter}" x:Key="GridSplitter_Row">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="ResizeBehavior" Value="PreviousAndNext"/>
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Grid.ColumnSpan" Value="{Binding Path=ColumnDefinitions.Count, RelativeSource={RelativeSource FindAncestor, 
+                         AncestorType={x:Type Grid}}}"/>
+    </Style>
+
+    <Style TargetType="{x:Type v:TableCell}" x:Key="TableObject_CellStyle">
         
         <Setter Property="BorderTemplate">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContentControl}">
                    
-                        <Border BorderThickness="0.5" BorderBrush="Black"
+                        <Border BorderThickness="0" BorderBrush="Transparent"
                             CornerRadius="0">
                             <ContentPresenter />
                         </Border>
@@ -24,8 +71,7 @@
                 <Setter Property="BorderTemplate">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ContentControl}">
-
-                            <Border BorderThickness="0.5" BorderBrush="Black" Background="LightBlue"
+                            <Border BorderThickness="0" BorderBrush="Transparent" Background="LightBlue"
                             CornerRadius="0">
                                 <ContentPresenter />
                             </Border>
@@ -57,7 +103,7 @@
                             <v:ObjectBar Opacity="0"  x:Name="PART_ObjectBar" Grid.Row="0" Style="{StaticResource ObjectBarStyle}"></v:ObjectBar>
 
                             <Grid Grid.Row="1">
-                                <Grid x:Name="PART_Grid"></Grid>
+                                <Grid x:Name="PART_Grid" IsHitTestVisible="True"></Grid>
                             </Grid>
                         </Grid>
                         <a:ResizeDecorator x:Name="PART_BaseObjectDecorator" />
