@@ -8,46 +8,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:w="clr-namespace:GraphicNotes.Views.Workspace"
         xmlns:v="clr-namespace:GraphicNotes.Views.Objects"
-        Title="MainWindow" Height="485" Width="656" Loaded="Window_Loaded" >
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Collections/RibbonBar/RibbonBarIcons.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
+        Title="MainWindow" Height="485" Width="656" >
     <Grid>
         <dxb:BarManager Name="barManager">
             <dxb:BarManager.Items>
                 <dxb:BarButtonItem Name="bNew" Content="New"
-                               Glyph="/GraphicNotes;component/Images/BarIcons/new_file_16x16.png"
-                               LargeGlyph="/GraphicNotes;component/Images/BarIcons/new_file_32x32.png"
-                               Description="New blank document." 
-                               Hint="New blank document."/>
+                               Glyph="/GraphicNotes;component/Images/Icons/new_file_16x16.png"
+                               LargeGlyph="/GraphicNotes;component/Images/Icons/new_file_32x32.png"
+                               Description="New blank document."
+                               Hint="New blank document." ItemClick="bNew_ItemClick" />
 
-                <dxb:BarButtonItem Name="bOpen" Content="Open" 
-                               Glyph="/GraphicNotes;component/Images/BarIcons/open_16x16.png"
-                               LargeGlyph="/GraphicNotes;component/Images/BarIcons/open_32x32.png"
-                               Description="Open a file."
-                               Hint="Open a file."/>
-
-                <dxb:BarButtonItem Name="bConnect" Content="Connect"
-                               Glyph="/GraphicNotes;component/Images/BarIcons/connect_16x16.png"
-                               LargeGlyph="/GraphicNotes;component/Images/BarIcons/connect_32x32.png"
-                               Description="Connect to a file."
-                               Hint="Connect to a file."/>
-
-                <dxb:BarButtonItem Name="bClose" Content="Close" 
-                               
-                               Description="Connect to a file."
-                               Hint="Connect to a file.">
-                    <dxb:BarButtonItem.GlyphTemplate>
-                        <DataTemplate>
-                            <Image Source="{DynamicResource bClose}"/>
-                        </DataTemplate>
-                    </dxb:BarButtonItem.GlyphTemplate>
-                </dxb:BarButtonItem>
-
+               
                 <!--region #RibbonGalleryBarItem-->
                 <dxr:RibbonGalleryBarItem Name="gTheme" DropDownGalleryInit="OnThemeDropDownGalleryInit">
                     <dxr:RibbonGalleryBarItem.Gallery>
@@ -83,8 +54,9 @@
                 </dxr:RibbonGalleryBarItem>
                 <!--endregion #RibbonGalleryBarItem-->
             </dxb:BarManager.Items>
+
             <DockPanel>
-                <dxr:RibbonControl x:Name="ribbonControl"  DockPanel.Dock="Top"  >
+                <dxr:RibbonControl x:Name="ribbonControl"  DockPanel.Dock="Top">
                     <dxr:RibbonDefaultPageCategory>
                         <dxr:RibbonPage Caption="Home">
                             <dxr:RibbonPageGroup Name="pFile" Caption="File" 
@@ -92,10 +64,8 @@
                                
 
                                 <dxb:BarItemLink BarItemName="bNew" RibbonStyle="Large"/>
-                                <dxb:BarItemLink BarItemName="bOpen" RibbonStyle="SmallWithText"/>
-                                <dxb:BarItemLink BarItemName="bConnect" RibbonStyle="SmallWithText"/>
-                                <dxb:BarItemLink BarItemName="bClose" RibbonStyle="SmallWithText"/>
-
+                               
+                               
                                 <!--<dxb:BarItemLink BarItemName="bOpen" RibbonStyle="SmallWithText"/>
                                 <dxb:BarItemLink BarItemName="bClose" RibbonStyle="SmallWithText"/>
                                 <dxb:BarItemLink BarItemName="bPrint" RibbonStyle="SmallWithText"/>-->
@@ -122,21 +92,20 @@
 
                         <dxdo:LayoutGroup x:Name="ToolsLayout" Orientation="Vertical" ItemWidth="212">
                             <dxdo:LayoutPanel x:Name="paneToolbox" Caption="Toolbox">
-                                <Border >
+                                <Border Background="White" >
                                     <ContentControl Content="{StaticResource ToolboxCollection}" />
                                 </Border>
                             </dxdo:LayoutPanel>
                             
                         </dxdo:LayoutGroup>
                         <dxdo:LayoutGroup x:Name="DocumentsLayout" Orientation="Vertical" ItemWidth="0.75*">
-                            <dxdo:DocumentGroup x:Name="documentGroup1" SelectedTabIndex="0" >
+                            <dxdo:DocumentGroup x:Name="documentGroup1" SelectedTabIndex="0">
                                 <!-- Documentos-->
                             </dxdo:DocumentGroup>
                         </dxdo:LayoutGroup>
                         <dxdo:LayoutGroup x:Name="NetworkLayout" Orientation="Vertical" ItemWidth="0.25*">
                             <dxdo:TabbedGroup>
                                 <dxdo:LayoutPanel x:Name="chatPanel" Caption="Chat">
-                                    <Image Source="{DynamicResource bClose}"/>
                                 </dxdo:LayoutPanel>
 
                                 <dxdo:LayoutPanel x:Name="groupPanel" Caption="Group">

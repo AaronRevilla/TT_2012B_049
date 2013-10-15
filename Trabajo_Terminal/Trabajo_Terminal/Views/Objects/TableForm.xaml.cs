@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Xpf.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,16 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GraphicNotes
+namespace GraphicNotes.Views.Objects
 {
     /// <summary>
-    /// Lógica de interacción para Window1.xaml
+    /// Lógica de interacción para TableForm.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class TableForm : Window
     {
-        public Window1()
+        public TableForm()
         {
             InitializeComponent();
+            //ThemeManager.SetThemeName(this, ThemeManager.ApplicationThemeName);
         }
     }
 }

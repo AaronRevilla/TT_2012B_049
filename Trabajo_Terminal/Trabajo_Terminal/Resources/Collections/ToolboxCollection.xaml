@@ -6,7 +6,7 @@
     <w:Toolbox x:Key="ToolboxCollection"
                DefaultItemSize="70,72" ScrollViewer.VerticalScrollBarVisibility="Disabled">
         <ItemsControl.Items>
-            <w:ToolboxObject Style="{StaticResource ToolboxObjectStyle}"
+            <w:ToolboxObject Style="{StaticResource ToolboxObjectStyle}" 
                              Text="{DynamicResource Figure3D}"
                              Type="Figure3D" 
                              Source="/GraphicNotes;component/Images/ObjectIcons/figure.png" />

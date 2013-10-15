@@ -9,23 +9,6 @@ namespace GraphicNotes.Views.Objects
 {
     class TableCell:TextEdit
     {
-        
-
-        private CellBorder[] borders;
-
-        public TableCell(){
-            borders = new CellBorder[4];
-        }
-
-        public CellBorder GetCellBorder(int index ){
-            return borders[index];
-        }
-
-        public void SetCellBorder(CellBorder border, int index)
-        {
-            borders[index]=border;
-        }
-
         public bool IsSelected
         {
             get { return (bool)GetValue(IsSelectedProperty); }

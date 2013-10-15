@@ -17,7 +17,7 @@ namespace GraphicNotes.Core
             Table,
             Text,
             Video
-        }
 
+        }
     }
 }
